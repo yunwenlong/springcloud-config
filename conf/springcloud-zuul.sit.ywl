@@ -1,0 +1,11 @@
+### 配置网关反向代理    
+zuul:
+  routes:
+    api-a:
+     ### 以 /api-m/访问转发到会员服务
+      path: /api-m/**
+      serviceId: app-member
+    api-b:
+        ### 以 /api-order/访问转发到订单服务
+      path: /api-o/**
+      serviceId: feign-order
